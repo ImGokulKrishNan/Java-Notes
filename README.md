@@ -284,3 +284,12 @@ Class
 type of Method
 	`User defined Method
 	`Pre-defined Method`
+
+constructor
+In Java, a constructor is a block of codes similar to the method. It is called when an instance of the class is created. At the time of calling constructor, memory for the object is allocated in the memory. 
+Types of Java constructors
+
+There are two types of constructors in Java:
+
+Default constructor (no-arg constructor)
+Parameterized constructor
