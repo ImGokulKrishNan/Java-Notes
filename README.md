@@ -311,3 +311,43 @@ There are two types of constructors in Java:
 
 Default constructor (no-arg constructor)
 Parameterized constructor
+
+
+
+static keyword
+The **static keyword** in [Java](https://www.javatpoint.com/java-tutorial) is used for memory management mainly. We can apply static keyword with [variables](https://www.javatpoint.com/java-variables), methods, blocks and [nested classes](https://www.javatpoint.com/java-inner-class). The static keyword belongs to the class than an instance of the class.
+
+The static can be:
+
+1. Variable (also known as a class variable)
+2. Method (also known as a class method)
+3. Block
+4. Nested class
+
+# this keyword in Java
+
+There can be a lot of usage of **Java this keyword**. In Java, this is a **reference variable** that refers to the current object.
+
+![java this keyword](https://static.javatpoint.com/images/thisr.jpg)
+
+## Usage of Java this keyword
+
+Here is given the 6 usage of java this keyword.
+
+1. [this can be used to refer current class instance variable.](https://www.javatpoint.com/this1)
+2. [this can be used to invoke current class method (implicitly)](https://www.javatpoint.com/this2)
+3. [this() can be used to invoke current class constructor.](https://www.javatpoint.com/this3)
+4. [this can be passed as an argument in the method call.](https://www.javatpoint.com/this4)
+5. [this can be passed as argument in the constructor call.](https://www.javatpoint.com/this5)
+6. [this can be used to return the current class instance from the method.](https://www.javatpoint.com/this6)
+
+
+![[Pasted image 20240101223952.png]]
+
+# Inheritance in Java
+
+1. [Inheritance](https://www.javatpoint.com/inheritance-in-java#)
+2. [Types of Inheritance](https://www.javatpoint.com/inheritance-in-java#inheritancetypes)
+3. [Why multiple inheritance is not possible in Java in case of class?](https://www.javatpoint.com/inheritance-in-java#inheritancenotmultiple)
+
+**Inheritance in Java** is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an important part of [OOPs](https://www.javatpoint.com/java-oops-concepts) (Object Oriented programming system).
