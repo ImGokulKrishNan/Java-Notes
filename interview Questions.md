@@ -1109,3 +1109,230 @@ The uses of the super keyword in Java are as follows:
 ### 117. Can we have virtual functions in Java?
 
 Yes, all the functions in Java are virtual by default.
+
+101) What is the difference between compile-time polymorphism and runtime polymorphism?
+There are the following differences between compile-time polymorphism and runtime polymorphism.
+
+SN	compile-time polymorphism	Runtime polymorphism
+1	In compile-time polymorphism, call to a method is resolved at compile-time.	In runtime polymorphism, call to an overridden method is resolved at runtime.
+2	It is also known as static binding, early binding, or overloading.	It is also known as dynamic binding, late binding, overriding, or dynamic method dispatch.
+3	Overloading is a way to achieve compile-time polymorphism in which, we can define multiple methods or constructors with different signatures.	Overriding is a way to achieve runtime polymorphism in which, we can redefine some particular method or variable in the derived class. By using overriding, we can give some specific implementation to the base class properties in the derived class.
+4	It provides fast execution because the type of an object is determined at compile-time.	It provides slower execution as compare to compile-time because the type of an object is determined at run-time.
+5	Compile-time polymorphism provides less flexibility because all the things are resolved at compile-time.	Run-time polymorphism provides more flexibility because all the things are resolved at runtime.
+102) What is Runtime Polymorphism?
+Runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time. In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+class Bike{  
+  void run(){System.out.println("running");}  
+}  
+class Splendor extends Bike{  
+  void run(){System.out.println("running safely with 60km");}  
+  public static void main(String args[]){  
+    Bike b = new Splendor();//upcasting  
+    b.run();  
+  }  
+}  
+Test it Now
+Output:
+
+running safely with 60km.
+In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+More details.
+103) Can you achieve Runtime Polymorphism by data members?
+No, because method overriding is used to achieve runtime polymorphism and data members cannot be overridden. We can override the member functions but not the data members. Consider the example given below.
+
+class Bike{  
+ int speedlimit=90;  
+}  
+class Honda3 extends Bike{  
+ int speedlimit=150;  
+ public static void main(String args[]){  
+  Bike obj=new Honda3();  
+  System.out.println(obj.speedlimit);//90  
+   }  
+Test it Now
+Output:
+
+90
+More details.
+104) What is the difference between static binding and dynamic binding?
+In case of the static binding, the type of the object is determined at compile-time whereas, in the dynamic binding, the type of the object is determined at runtime.
+
+Static Binding
+
+class Dog{  
+ private void eat(){System.out.println("dog is eating...");}  
+  
+ public static void main(String args[]){  
+  Dog d1=new Dog();  
+  d1.eat();  
+ }  
+}  
+Dynamic Binding
+
+class Animal{  
+ void eat(){System.out.println("animal is eating...");}  
+}  
+  
+class Dog extends Animal{  
+ void eat(){System.out.println("dog is eating...");}  
+  
+ public static void main(String args[]){  
+  Animal a=new Dog();  
+  a.eat();  
+ }  
+}  
+More details.
+105) What is the output of the following Java program?
+class BaseTest   
+{  
+  void print()  
+  {  
+    System.out.println("BaseTest:print() called");  
+  }  
+}  
+public class Test extends BaseTest   
+{  
+  void print()   
+  {  
+    System.out.println("Test:print() called");  
+  }  
+  public static void main (String args[])  
+  {  
+    BaseTest b = new Test();  
+    b.print();  
+  }  
+}  
+Output
+
+  Test:print() called
+Explanation
+
+It is an example of Dynamic method dispatch. The type of reference variable b is determined at runtime. At compile-time, it is checked whether that method is present in the Base class. In this case, it is overridden in the child class, therefore, at runtime the derived class method is called.
+
+106) What is Java instanceOf operator?
+The instanceof in Java is also known as type comparison operator because it compares the instance with type. It returns either true or false. If we apply the instanceof operator with any variable that has a null value, it returns false. Consider the following example.
+
+class Simple1{  
+ public static void main(String args[]){  
+ Simple1 s=new Simple1();  
+ System.out.println(s instanceof Simple1);//true  
+ }  
+}  
+Test it Now
+Output
+
+true
+An object of subclass type is also a type of parent class. For example, if Dog extends Animal then object of Dog can be referred by either Dog or Animal class.
+
+Core Java - OOPs Concepts: Abstraction Interview Questions
+107) What is the abstraction?
+Abstraction is a process of hiding the implementation details and showing only functionality to the user. It displays just the essential things to the user and hides the internal information, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery. Abstraction enables you to focus on what the object does instead of how it does it. Abstraction lets you focus on what the object does instead of how it does it.
+
+In Java, there are two ways to achieve the abstraction.
+AD
+
+Abstract Class
+Interface
+More details.
+108) What is the difference between abstraction and encapsulation?
+Abstraction hides the implementation details whereas encapsulation wraps code and data into a single unit.
+
+More details.
+109) What is the abstract class?
+A class that is declared as abstract is known as an abstract class. It needs to be extended and its method implemented. It cannot be instantiated. It can have abstract methods, non-abstract methods, constructors, and static methods. It can also have the final methods which will force the subclass not to change the body of the method. Consider the following example.
+
+abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+Test it Now
+Output
+
+running safely
+More details.
+110) Can there be an abstract method without an abstract class?
+No, if there is an abstract method in a class, that class must be abstract.
+
+111) Is the following program written correctly? If yes then what will be the output of the program?
+abstract class Calculate  
+{  
+    abstract int multiply(int a, int b);  
+}  
+   
+public class Main  
+{  
+    public static void main(String[] args)  
+    {  
+        int result = new Calculate()  
+        {      
+            @Override  
+            int multiply(int a, int b)  
+            {  
+                return a*b;  
+            }  
+        }.multiply(12,32);  
+        System.out.println("result = "+result);  
+    }  
+}  
+Yes, the program is written correctly. The Main class provides the definition of abstract method multiply declared in abstract class Calculation. The output of the program will be:
+AD
+
+Output
+
+384
+112) Can you use abstract and final both with a method?
+No, because we need to override the abstract method to provide its implementation, whereas we can't override the final method.
+
+113) Is it possible to instantiate the abstract class?
+No, the abstract class can never be instantiated even if it contains a constructor and all of its methods are implemented.
+
+114) What is the interface?
+The interface is a blueprint for a class that has static constants and abstract methods. It can be used to achieve full abstraction and multiple inheritance. It is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java. In other words, you can say that interfaces can have abstract methods and variables. Java Interface also represents the IS-A relationship. It cannot be instantiated just like the abstract class. However, we need to implement it to define its methods. Since Java 8, we can have the default, static, and private methods in an interface.
+
+More details.
+115) Can you declare an interface method static?
+No, because methods of an interface are abstract by default, and we can not use static and abstract together.
+
+116) Can the Interface be final?
+No, because an interface needs to be implemented by the other class and if it is final, it can't be implemented by any class.
+
+117) What is a marker interface?
+A Marker interface can be defined as the interface which has no data member and member functions. For example, Serializable, Cloneable are marker interfaces. The marker interface can be declared as follows.
+
+public interface Serializable{    
+}    
+118) What are the differences between abstract class and interface?
+Abstract class	Interface
+An abstract class can have a method body (non-abstract methods).	The interface has only abstract methods.
+An abstract class can have instance variables.	An interface cannot have instance variables.
+An abstract class can have the constructor.	The interface cannot have the constructor.
+An abstract class can have static methods.	The interface cannot have static methods.
+You can extend one abstract class.	You can implement multiple interfaces.
+The abstract class can provide the implementation of the interface.	The Interface can't provide the implementation of the abstract class.
+The abstract keyword is used to declare an abstract class.	The interface keyword is used to declare an interface.
+An abstract class can extend another Java class and implement multiple Java interfaces.	An interface can extend another Java interface only.
+An abstract class can be extended using keyword extends	An interface class can be implemented using keyword implements
+A Java abstract class can have class members like private, protected, etc.	Members of a Java interface are public by default.
+Example:
+public abstract class Shape{
+public abstract void draw();
+}	Example:
+public interface Drawable{
+void draw();
+}
+119) Can we define private and protected modifiers for the members in interfaces?
+No, they are implicitly public.
+
+120) When can an object reference be cast to an interface reference?
+An object reference can be cast to an interface reference when the object implements the referenced interface.
+
+121) How to make a read-only class in Java?
+A class can be made read-only by making all of the fields private. The read-only class will have only getter methods which return the private property of the class to the main method. We cannot modify this property because there is no setter method available in the class. Consider the following example.
