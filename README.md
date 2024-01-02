@@ -351,3 +351,25 @@ Here is given the 6 usage of java this keyword.
 3. [Why multiple inheritance is not possible in Java in case of class?](https://www.javatpoint.com/inheritance-in-java#inheritancenotmultiple)
 
 **Inheritance in Java** is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an important part of [OOPs](https://www.javatpoint.com/java-oops-concepts) (Object Oriented programming system).
+
+
+# Method Overloading in Java
+If a [class](https://www.javatpoint.com/object-and-class-in-java) has multiple methods having same name but different in parameters, it is known as **Method Overloading**.
+
+If we have to perform only one operation, having same name of the methods increases the readability of the [program](https://www.javatpoint.com/java-programs).
+
+Suppose you have to perform addition of the given numbers but there can be any number of arguments, if you write the method such as a(int,int) for two parameters, and b(int,int,int) for three parameters then it may be difficult for you as well as other programmers to understand the behavior of the method because its name differs.
+
+## Advantage of method overloading
+
+Method overloading _increases the readability of the program_.
+
+### Different ways to overload the method
+
+There are two ways to overload the method in java
+
+1. By changing number of arguments
+2. By changing the data type
+### 1) Method Overloading: changing no. of arguments
+
+In this example, we have created two methods, first add() method performs addition of two numbers and second add method performs addition of three numbers.
