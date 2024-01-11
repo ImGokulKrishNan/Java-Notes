@@ -373,3 +373,227 @@ There are two ways to overload the method in java
 ### 1) Method Overloading: changing no. of arguments
 
 In this example, we have created two methods, first add() method performs addition of two numbers and second add method performs addition of three numbers.
+
+
+
+
+__Java Array__
+
+__Array is a collection of similar type of elements which has contiguous memory location.__
+
+
+**Java array** is an object which contains elements of a similar data type. Additionally, The elements of an array are stored in a contiguous memory location. It is a data structure where we store similar elements. We can store only a fixed set of elements in a Java array.
+
+Array in Java is index-based, the first element of the array is stored at the 0th index, 2nd element is stored on 1st index and so on.
+
+![[Pasted image 20240111185516.png]]
+
+### Advantages
+
+- **Code Optimization:** It makes the code optimized, we can retrieve or sort the data efficiently.
+- **Random access:** We can get any data located at an index position.
+
+### Disadvantages
+
+- **Size Limit:** We can store only the fixed size of elements in the array. It doesn't grow its size at runtime. To solve this problem, collection framework is used in Java which grows automatically.
+### Types of Array in java
+
+There are two types of array.
+
+- Single Dimensional Array
+- Multidimensional Array
+## Single Dimensional Array in Java
+
+**Syntax to Declare an Array in Java**
+
+
+``1. dataType[] arr; (or)  
+`2. dataType []arr; (or)  
+`3. dataType arr[];  
+
+**Instantiation of an Array in Java**
+
+`1. arrayRefVar=new datatype[size];`
+
+
+Example:
+	``class Testarray{
+	public static void main(String args[]){
+	
+	int a[]=new int[5];//declaration and instantiation
+	a[0]=10;//initialization
+	a[1]=20;
+	a[2]=70;
+	a[3]=40;
+	a[4]=50;
+	
+	//printing array
+	for(int i=0;i<a.length;i++)//length is the property of array
+	System.out.println(a[i]);
+10
+20  
+70  
+40  
+50
+
+
+## For-each Loop for Java Array
+
+We can also print the Java array using **[for-each loop](https://www.javatpoint.com/for-each-loop)**. The Java for-each loop prints the array elements one by one. It holds an array element in a variable, then executes the body of the loop.
+
+The syntax of the for-each loop is given below:
+
+	1. class Testarray1{  
+	2. public static void main(String args[]){  
+	3. int arr[]={33,3,4,5};  
+	4. //printing array using for-each loop  
+	5. for(int i:arr)  
+	6. System.out.println(i);  
+	7. }}
+
+	output:
+	33
+	3
+	4
+	5
+
+## Passing Array to a Method in Java
+
+We can pass the java array to method so that we can reuse the same logic on any array.
+
+Let's see the simple example to get the minimum number of an array using a method.
+
+
+	1. //Java Program to demonstrate the way of passing an array  
+	2. //to method.  
+	3. class Testarray2{  
+	4. //creating a method which receives an array as a parameter  
+	5. static void min(int arr[]){  
+	6. int min=arr[0];  
+	7. for(int i=1;i<arr.length;i++)  
+	8.  if(min>arr[i])  
+	9.   min=arr[i];  
+	
+	11. System.out.println(min);  
+	12. }  
+
+14. public static void main(String args[]){  
+15. int a[]={33,3,4,5};//declaring and initializing an array  
+16. min(a);//passing array to method  
+17. }}  
+
+
+Output:
+
+3
+
+## Anonymous Array in Java
+
+Java supports the feature of an anonymous array, so you don't need to declare the array while passing an array to the method.
+
+
+1. //Java Program to demonstrate the way of passing an anonymous array  
+2. //to method.  
+3. public class TestAnonymousArray{  
+4. //creating a method which receives an array as a parameter  
+5. static void printArray(int arr[]){  
+6. for(int i=0;i<arr.length;i++)  
+7. System.out.println(arr[i]);  
+8. }  
+
+10. public static void main(String args[]){  
+11. printArray(new int[]{10,22,44,66});//passing anonymous array to method  
+12. }}  
+
+
+Output:
+
+10
+22
+44
+66
+
+## Returning Array from the Method
+
+We can also return an array from the method in Java.
+
+
+1. //Java Program to return an array from the method  
+2. class TestReturnArray{  
+3. //creating method which returns an array  
+4. static int[] get(){  
+5. return new int[]{10,30,50,90,60};  
+6. }  
+
+8. public static void main(String args[]){  
+9. //calling method which returns an array  
+10. int arr[]=get();  
+11. //printing the values of an array  
+12. for(int i=0;i<arr.length;i++)  
+13. System.out.println(arr[i]);  
+14. }}  
+
+[Test it Now](https://www.javatpoint.com/opr/test.jsp?filename=TestReturnArray)
+
+Output:
+
+10
+30
+50
+90
+60
+
+## ArrayIndexOutOfBoundsException
+
+The Java Virtual Machine (JVM) throws an ArrayIndexOutOfBoundsException if length of the array in negative, equal to the array size or greater than the array size while traversing the array.
+
+
+
+1. //Java Program to demonstrate the case of   
+2. //ArrayIndexOutOfBoundsException in a Java Array.  
+3. public class TestArrayException{  
+4. public static void main(String args[]){  
+5. int arr[]={50,60,70,80};  
+6. for(int i=0;i<=arr.length;i++){  
+7. System.out.println(arr[i]);  
+8. }  
+9. }}  
+
+
+
+Output:
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+	at TestArrayException.main(TestArrayException.java:5)
+50
+60
+70
+80
+## Multidimensional Array in Java
+
+
+data is stored in row and column based index (also known as matrix form).
+
+**Syntax to Declare Multidimensional Array in Java**
+
+
+
+	1. dataType[][] arrayRefVar; (or)  
+	2. dataType [][]arrayRefVar; (or)  
+	3. dataType arrayRefVar[][]; (or)  
+	4. dataType []arrayRefVar[];
+**Example to instantiate Multidimensional Array in Java**
+
+	`1. int[][] arr=new int[3][3];//3 row and 3 column  `
+
+**Example to initialize Multidimensional Array in Java**
+	
+	1. arr[0][0]=1;  
+	2. arr[0][1]=2;  
+	3. arr[0][2]=3;  
+	4. arr[1][0]=4;  
+	5. arr[1][1]=5;  
+	6. arr[1][2]=6;  
+	7. arr[2][0]=7;  
+	8. arr[2][1]=8;  
+	9. arr[2][2]=9;
