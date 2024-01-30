@@ -623,3 +623,59 @@ Following are the important points must remember while returning a value:
 The syntax of a return statement is the return keyword is followed by the value to be returned.
 
 	return return_value;
+
+
+
+
+ 
+# Recursion in Java
+
+Recursion in java is a process in which a method calls itself continuously. A method in java that calls itself is called recursive method.
+
+It makes the code compact but complex to understand.
+
+**Syntax:**
+
+1. returntype methodname(){  
+2. 
+3. methodname();//calling same method  
+4. }
+## Java Recursion Example 1: Infinite times
+
+
+1. public class RecursionExample1 {  
+2. static void p(){  
+3. System.out.println("hello");  
+4. p();  
+5. }  
+
+7. public static void main(String[] args) {  
+8. p();  
+9. }  
+10. }  
+
+Output:
+
+hello
+hello
+
+## Java Recursion Example 3: Factorial Number
+
+
+
+1. public class RecursionExample3 {  
+2.     static int factorial(int n){      
+3.           if (n == 1)      
+4.             return 1;      
+5.           else      
+6.             return(n * factorial(n-1));      
+7.     }      
+
+9. public static void main(String[] args) {  
+10. System.out.println("Factorial of 5 is: "+factorial(5));  
+11. }  
+12. }  
+
+Output:
+
+Factorial of 5 is: 120
