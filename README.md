@@ -1,5 +1,7 @@
 # Java-Notes
-Learning
+
+
+
 **What is Java?**
 Java is programming language and platform independent ,high level language ,It support Object Oriented programming & system.
 
