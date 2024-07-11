@@ -48,7 +48,6 @@ Byte         byte      =  4564135
 - Ternary Operator and
 - Assignment Operator.
 
-
 ### Java Unary Operator
 
 The Java unary operators require only one operand. Unary operators are used to perform various operations i.e.:
