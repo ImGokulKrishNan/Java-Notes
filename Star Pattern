@@ -2,6 +2,7 @@ Star
 public class Main {
     public static void main(String[] args) {
 
+            System.out.println("Demo Tested")
         int i;
         int n = 5;
         int k;
